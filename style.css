@@ -290,6 +290,9 @@ body {
   }
 }
 
+/* Story Section Styles */
+
+/* ========= TIMELINE BASE STYLES ========= */
 .story-section {
   position: relative;
 }
@@ -301,6 +304,7 @@ body {
   padding: 20px 0;
 }
 
+/* Vertical line in center */
 .timeline::before {
   content: '';
   position: absolute;
@@ -312,6 +316,7 @@ body {
   transform: translateX(-50%);
 }
 
+/* Each timeline item */
 .story-item {
   padding: 15px 0;
   position: relative;
@@ -319,17 +324,20 @@ body {
   margin-bottom: 10px;
 }
 
+/* Odd items on left */
 .story-item:nth-child(odd) {
   left: 0;
   padding-right: 50px;
   text-align: right;
 }
 
+/* Even items on right */
 .story-item:nth-child(even) {
   left: 50%;
   padding-left: 50px;
 }
 
+/* Year bubble on timeline */
 .story-year {
   position: absolute;
   width: 80px;
@@ -344,6 +352,7 @@ body {
   top: 20px;
 }
 
+/* Adjust year position for odd/even */
 .story-item:nth-child(odd) .story-year {
   right: -40px;
 }
@@ -352,6 +361,7 @@ body {
   left: -40px;
 }
 
+/* Card containing the title and text */
 .story-card {
   padding: 20px;
   background: #fff;
@@ -373,7 +383,7 @@ body {
   font-size: 0.95rem;
 }
 
-/* Scroll Animation Styles */
+/* ========= SCROLL ANIMATION ========= */
 .animate-on-scroll {
   opacity: 0;
   transform: translateY(30px);
@@ -385,24 +395,43 @@ body {
   transform: translateY(0);
 }
 
-/* Responsive Timeline */
+/* ========= RESPONSIVE STYLES FOR MOBILE ========= */
 @media (max-width: 768px) {
+  /* Move timeline line to the left side */
   .timeline::before {
-    left: 30px;
+    left: 20px;
   }
 
+  /* Make each story item full width */
   .story-item {
     width: 100%;
-    padding-left: 60px;
+    padding-left: 60px; /* add space for timeline line and year bubble */
     padding-right: 20px;
+    padding-top: 50px; /* space above card for year bubble */
+    margin-bottom: 30px;
     text-align: left !important;
     left: 0 !important;
   }
 
+  /* Position the year bubble on top left corner */
+  .story-item .story-year {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: auto;
+    height: auto;
+    padding: 5px 12px;
+    font-size: 13px;
+    line-height: normal;
+    border-radius: 15px;
+    background-color: #1e61ff;
+    color: white;
+    z-index: 2;
+  }
+
+  /* Remove unnecessary right positioning */
   .story-item:nth-child(odd) .story-year,
   .story-item:nth-child(even) .story-year {
-    left: 0;
     right: auto;
-    top: -15px;
   }
 }
