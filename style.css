@@ -292,98 +292,94 @@ body {
 
 /* Story Section Styles */
 
-/* ========= TIMELINE BASE STYLES ========= */
+/* ========= BASE STYLES ========= */
 .story-section {
   position: relative;
+  padding: 40px 20px;
+  background-color: #f5f8ff;
 }
 
 .timeline {
   position: relative;
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px 0;
+  max-width: 960px;
+  margin: auto;
+  padding: 40px 0;
 }
 
-/* Vertical line in center */
+/* Vertical timeline line */
 .timeline::before {
   content: '';
   position: absolute;
   width: 3px;
-  background: linear-gradient(to bottom, #1e61ff, #4a90e2);
+  background: #1e61ff;
   top: 0;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
 }
 
-/* Each timeline item */
+/* Timeline items */
 .story-item {
-  padding: 15px 0;
   position: relative;
   width: 50%;
-  margin-bottom: 10px;
+  padding: 20px 0;
 }
 
-/* Odd items on left */
+/* Alternate side positioning */
 .story-item:nth-child(odd) {
   left: 0;
-  padding-right: 50px;
+  padding-right: 40px;
   text-align: right;
 }
 
-/* Even items on right */
 .story-item:nth-child(even) {
   left: 50%;
-  padding-left: 50px;
+  padding-left: 40px;
 }
 
-/* Year bubble on timeline */
+/* Year badge */
 .story-year {
   position: absolute;
-  width: 80px;
-  height: 30px;
-  line-height: 30px;
-  text-align: center;
+  width: auto;
   background: #1e61ff;
   color: white;
-  font-weight: bold;
-  border-radius: 15px;
-  font-size: 14px;
-  top: 20px;
+  padding: 6px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 20px;
+  top: 10px;
+  white-space: nowrap;
 }
 
-/* Adjust year position for odd/even */
 .story-item:nth-child(odd) .story-year {
-  right: -40px;
+  right: -70px;
 }
 
 .story-item:nth-child(even) .story-year {
-  left: -40px;
+  left: -70px;
 }
 
-/* Card containing the title and text */
+/* Card styles */
 .story-card {
-  padding: 20px;
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
-  position: relative;
+  background: #eaf1ff;
+  padding: 18px 22px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
 .story-card h3 {
-  color: #1e61ff;
-  margin-bottom: 10px;
-  font-size: 1.1rem;
-  font-weight: 600;
+  color: #111;
+  margin-bottom: 8px;
+  font-size: 1.05rem;
 }
 
 .story-card p {
-  color: #555;
-  line-height: 1.5;
-  font-size: 0.95rem;
+  color: #444;
+  font-size: 0.9rem;
+  line-height: 1.4;
 }
 
-/* ========= SCROLL ANIMATION ========= */
+/* Animation logic */
 .animate-on-scroll {
   opacity: 0;
   transform: translateY(30px);
@@ -395,43 +391,32 @@ body {
   transform: translateY(0);
 }
 
-/* ========= RESPONSIVE STYLES FOR MOBILE ========= */
+/* ========= MOBILE RESPONSIVE ========= */
 @media (max-width: 768px) {
-  /* Move timeline line to the left side */
   .timeline::before {
     left: 20px;
   }
 
-  /* Make each story item full width */
   .story-item {
     width: 100%;
-    padding-left: 60px; /* add space for timeline line and year bubble */
-    padding-right: 20px;
-    padding-top: 50px; /* space above card for year bubble */
-    margin-bottom: 30px;
-    text-align: left !important;
     left: 0 !important;
+    padding-left: 60px;
+    padding-right: 20px;
+    margin-bottom: 25px;
+    text-align: left;
   }
 
-  /* Position the year bubble on top left corner */
-  .story-item .story-year {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: auto;
-    height: auto;
-    padding: 5px 12px;
-    font-size: 13px;
-    line-height: normal;
-    border-radius: 15px;
-    background-color: #1e61ff;
-    color: white;
-    z-index: 2;
-  }
-
-  /* Remove unnecessary right positioning */
-  .story-item:nth-child(odd) .story-year,
-  .story-item:nth-child(even) .story-year {
+  .story-year {
+    left: 0 !important;
     right: auto;
+    top: 0;
+    font-size: 12px;
+    padding: 5px 10px;
+  }
+
+  .story-card {
+    background: #eaf1ff;
+    padding: 15px 18px;
+    font-size: 0.9rem;
   }
 }
