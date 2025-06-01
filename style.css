@@ -290,11 +290,10 @@ body {
   }
 }
 
-/* Story Section Styles */
-
-/* ========= TIMELINE BASE STYLES ========= */
+/* Story Section - Mobile Optimized */
 .story-section {
   position: relative;
+  overflow: hidden;
 }
 
 .timeline {
@@ -304,7 +303,7 @@ body {
   padding: 20px 0;
 }
 
-/* Vertical line in center */
+/* Vertical timeline line */
 .timeline::before {
   content: '';
   position: absolute;
@@ -316,28 +315,27 @@ body {
   transform: translateX(-50%);
 }
 
-/* Each timeline item */
 .story-item {
   padding: 15px 0;
   position: relative;
   width: 50%;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
 }
 
-/* Odd items on left */
+/* Left side items */
 .story-item:nth-child(odd) {
   left: 0;
   padding-right: 50px;
   text-align: right;
 }
 
-/* Even items on right */
+/* Right side items */
 .story-item:nth-child(even) {
   left: 50%;
   padding-left: 50px;
 }
 
-/* Year bubble on timeline */
+/* Year bubble */
 .story-year {
   position: absolute;
   width: 80px;
@@ -350,18 +348,20 @@ body {
   border-radius: 15px;
   font-size: 14px;
   top: 20px;
+  z-index: 2;
 }
 
-/* Adjust year position for odd/even */
+/* Year position for left items */
 .story-item:nth-child(odd) .story-year {
   right: -40px;
 }
 
+/* Year position for right items */
 .story-item:nth-child(even) .story-year {
   left: -40px;
 }
 
-/* Card containing the title and text */
+/* Content card */
 .story-card {
   padding: 20px;
   background: #fff;
@@ -383,55 +383,48 @@ body {
   font-size: 0.95rem;
 }
 
-/* ========= SCROLL ANIMATION ========= */
-.animate-on-scroll {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.6s ease-out;
-}
-
-.animate-on-scroll.animated {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* ========= RESPONSIVE STYLES FOR MOBILE ========= */
+/* Mobile Responsive Fixes */
 @media (max-width: 768px) {
-  /* Move timeline line to the left side */
   .timeline::before {
-    left: 20px;
+    left: 30px; /* Moved timeline line further from edge */
   }
 
-  /* Make each story item full width */
   .story-item {
     width: 100%;
-    padding-left: 60px; /* add space for timeline line and year bubble */
+    padding-left: 70px; /* Increased padding to prevent cutting */
     padding-right: 20px;
-    padding-top: 50px; /* space above card for year bubble */
-    margin-bottom: 30px;
+    padding-top: 60px; /* More space for year bubble */
     text-align: left !important;
     left: 0 !important;
+    margin-bottom: 40px;
   }
 
-  /* Position the year bubble on top left corner */
-  .story-item .story-year {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: auto;
-    height: auto;
-    padding: 5px 12px;
+  .story-year {
+    top: 10px;
+    left: 30px !important; /* Fixed position for all years */
+    right: auto !important;
+    transform: translateX(-50%);
+    width: 70px;
+  }
+
+  .story-card {
+    padding: 15px;
+  }
+}
+
+/* Extra small devices (phones < 576px) */
+@media (max-width: 575px) {
+  .timeline::before {
+    left: 25px;
+  }
+
+  .story-item {
+    padding-left: 60px;
+  }
+
+  .story-year {
+    left: 25px !important;
+    width: 60px;
     font-size: 13px;
-    line-height: normal;
-    border-radius: 15px;
-    background-color: #1e61ff;
-    color: white;
-    z-index: 2;
-  }
-
-  /* Remove unnecessary right positioning */
-  .story-item:nth-child(odd) .story-year,
-  .story-item:nth-child(even) .story-year {
-    right: auto;
   }
 }
