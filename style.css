@@ -361,7 +361,7 @@ body {
 
 /* Card styles */
 .story-card {
-  background: #dae4f7;
+  background: #eaf1ff;
   padding: 18px 22px;
   border-radius: 12px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
@@ -415,7 +415,7 @@ body {
   }
 
   .story-card {
-    background: #dae4f7;
+    background: #eaf1ff;
     padding: 15px 18px;
     font-size: 0.9rem;
   }
