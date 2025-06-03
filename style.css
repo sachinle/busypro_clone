@@ -569,3 +569,32 @@ h6 {
     padding: 1.5rem;
   }
 }
+
+/* Construction On Progress */
+
+.construction-section {
+  background: #f8f9fa;
+}
+
+.construction-gif {
+  max-width: 450px;
+  width: 100%;
+  height: auto;
+  margin-top: 20px;
+  animation: pulseScale 2.5s infinite ease-in-out;
+}
+
+@keyframes pulseScale {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.03);
+  }
+}
+
+@media (max-width: 576px) {
+  .construction-gif {
+    max-width: 300px;
+  }
+}
