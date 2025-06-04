@@ -570,6 +570,105 @@ h6 {
   }
 }
 
+/* Why Choose Section */
+   .why-choose {
+    padding: 3rem 1rem;
+    background-color: #f0f2f7;
+  }
+  .why-choose h2 {
+    font-weight: bold;
+    text-align: center;
+  }
+  .why-choose-subtitle {
+    text-align: center;
+    color: #6c757d;
+    margin-bottom: 3rem;
+  }
+  .why-choose-card {
+    background-color: #fff;
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    text-align: left;
+    min-height: 100%;
+  }
+  .why-choose-card h3 {
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  .why-choose-card p {
+    color: #333;
+  }
+  .icon-placeholder {
+  width: 60px;
+  height: 60px;
+  background-color: #dbe5ff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  color: #1b55d0;
+}
+
+  .card-highlight {
+    display: inline-block;
+    background-color: #f3f8ff;
+    color: #1b55d0;
+    font-weight: 600;
+    border: 1px dashed #1b55d0;
+    padding: 0.4rem 1rem;
+    margin: 1rem 0;
+    border-radius: 8px;
+    font-size: 0.9rem;
+  }
+  .card-features {
+    list-style: none;
+    padding-left: 0;
+  }
+  .card-features li {
+    position: relative;
+    padding-left: 2rem;
+    margin-bottom: 0.8rem;
+  }
+  .card-features li::before {
+    content: "\f00c";
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    color: #1b55d0;
+    position: absolute;
+    left: 0;
+  }
+  .offer-section {
+    background: linear-gradient(90deg, #2f57ef, #287bff);
+    color: #fff;
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    margin-top: 3rem;
+  }
+  .offer-btn {
+    background-color: #fff;
+    color: #1b55d0;
+    font-weight: 600;
+    border: none;
+    padding: 0.6rem 1.5rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+    transition: all 0.3s;
+  }
+  .offer-btn:hover {
+    background-color: #dbe5ff;
+    color: #1b55d0;
+  }
+  .icon-placeholder {
+    width: 60px;
+    height: 60px;
+    background-color: #dbe5ff;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+  }
+
 /* Construction On Progress */
 
 .construction-section {
