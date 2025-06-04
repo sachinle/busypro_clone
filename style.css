@@ -670,16 +670,16 @@ h6 {
   }
 
 /* Construction On Progress */
-
 .construction-section {
-  background: #f8f9fa;
+  background: #ffffff;
+  padding: 2rem 0 1rem; /* Reduced top and bottom padding */
 }
 
 .construction-gif {
-  max-width: 450px;
+  max-width: 320px;
   width: 100%;
   height: auto;
-  margin-top: 20px;
+  margin-top: 10px;
   animation: pulseScale 2.5s infinite ease-in-out;
 }
 
@@ -694,6 +694,6 @@ h6 {
 
 @media (max-width: 576px) {
   .construction-gif {
-    max-width: 300px;
+    max-width: 220px;
   }
 }
